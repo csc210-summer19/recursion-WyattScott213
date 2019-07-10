@@ -67,11 +67,11 @@ public class RecursionFunTest {
   @Test
   public void testReverseWithLengthThree() {
     int[] a = { 2, 4, 6 };
-    rf.reverseArray(a);
+    a = rf.reverseArray(a);
     assertEquals(6, a[0]);
     assertEquals(4, a[1]);
     assertEquals(2, a[2]);
-    rf.reverseArray(a);
+    a = rf.reverseArray(a);
     assertEquals(6, a[2]);
     assertEquals(4, a[1]);
     assertEquals(2, a[0]);
@@ -80,18 +80,18 @@ public class RecursionFunTest {
   @Test
   public void testReverse() {
     int[] b = { 2 };
-    rf.reverseArray(b);
+    b = rf.reverseArray(b);
     assertEquals(2, b[0]);
-    rf.reverseArray(b);
+    b = rf.reverseArray(b);
     assertEquals(2, b[0]);
     
     int[] a = { 2, 4, 6, 8 };
-    rf.reverseArray(a);
+    a = rf.reverseArray(a);
     assertEquals(8, a[0]);
     assertEquals(6, a[1]);
     assertEquals(4, a[2]);
     assertEquals(2, a[3]);
-    rf.reverseArray(a);
+    a = rf.reverseArray(a);
     assertEquals(2, a[0]);
     assertEquals(4, a[1]);
     assertEquals(6, a[2]);
@@ -167,7 +167,7 @@ public class RecursionFunTest {
     intList.removeAll(3);
       
     assertEquals((Integer)5, intList.get(0));
-    assertEquals((Integer)2, intList.get(1));  
+    assertEquals((Integer)7, intList.get(1));  
   }
 
   @Test
@@ -246,8 +246,11 @@ public class RecursionFunTest {
 
   @Test
   public void testFindExitWithSmallGrid3() {
-    char[][] grid = { { '+', '+', ' ', '+' }, { ' ', ' ', ' ', '+' }, { '+', ' ', ' ', '+' }, { '+', ' ', ' ', '+' },
-        { '+', '+', '+', '+' } };
+    char[][] grid = { { '+', '+', ' ', '+' },
+    		          { '+', ' ', ' ', '+' },
+    		          { '+', ' ', ' ', '+' },
+    		          { '+', ' ', ' ', '+' },
+                      { '+', '+', '+', '+' } };
     ObstacleCourse top = new ObstacleCourse(3, 1, grid);
     assertEquals(3, top.getStartRow());
     assertEquals(1, top.getStartColumn());
